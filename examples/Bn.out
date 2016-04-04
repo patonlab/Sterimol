@@ -1,0 +1,57 @@
+1
+
+
+  WRONG INPUT
+
+
+ MOLECULE NR   1
+
+ NUMBER OF ATOMS = 15    OUTPUT INDEX = 1
+
+
+ HC(H,H)RC6(X1)RDC6(H)DC6(H)DC6(H)DC6(H)RDC6(H)
+
+
+   TORSION ANGLES:   90.00  180.00  180.00
+   VANDERWAALS RADII (*100) AND COORDINATES
+
+
+     1   100     0.00     0.00     0.00
+     2   150    -1.10     0.00     0.00
+     3   100    -1.47     0.27    -1.00
+     4   100    -1.47    -1.00     0.27
+     5   170    -1.60     1.00     1.00
+     6   170    -1.83     2.31     0.61
+     7   100    -1.65     2.60    -0.39
+     8   170    -2.29     3.22     1.54
+     9   100    -2.47     4.23     1.24
+    10   170    -2.52     2.84     2.84
+    11   100    -2.87     3.55     3.55
+    12   170    -2.29     1.53     3.23
+    13   100    -2.47     1.24     4.23
+    14   170    -1.83     0.61     2.31
+    15   100    -1.65    -0.39     2.60
+
+
+
+
+
+
+  STERIC PARAMETERS:   L=  4.62
+
+  B(1) - B(4):      1.52     6.02     3.10     3.13   B(5):     6.02
+
+
+
+  TAKE CARE; MUTUAL PENETRATION OF FOLLOWING ATOMS:
+
+ NRS.  2 AND 14   ; OVERLAP IS   0.71
+ NRS.  3 AND  6   ; OVERLAP IS   0.07
+ NRS.  4 AND 14   ; OVERLAP IS   0.07
+ NRS.  5 AND 10   ; OVERLAP IS   0.64
+ NRS.  5 AND 12   ; OVERLAP IS   1.01
+ NRS.  5 AND 14   ; OVERLAP IS   2.02
+ NRS.  5 AND 15   ; OVERLAP IS   0.58
+ NRS.  6 AND 12   ; OVERLAP IS   0.64
+ NRS.  6 AND 14   ; OVERLAP IS   1.01
+ NRS.  8 AND 14   ; OVERLAP IS   0.64

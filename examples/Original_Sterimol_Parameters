@@ -1,0 +1,100 @@
+####################################################################
+Parameters obtained using original fortran version of 
+STERIMOL PROGRAM  (DATE: SEPT. 1976) 
+Compiled on OSX v10.11.3 27/03/2016
+robert.paton@chem.ox.ac.uk
+####################################################################
+==> H.out <==
+  STERIC PARAMETERS:   L=  2.06
+  B(1) - B(4):      1.00     1.00     1.00     1.00   B(5):     1.00
+
+==> Me.out <==
+  STERIC PARAMETERS:   L=  3.00
+  B(1) - B(4):      1.52     2.04     1.90     1.90   B(5):     2.04
+
+==> Et.out <==
+  STERIC PARAMETERS:   L=  4.11
+  B(1) - B(4):      1.52     2.98     1.90     1.91   B(5):     3.17
+
+==> iPr.out <==
+  STERIC PARAMETERS:   L=  4.11
+  B(1) - B(4):      3.15     1.90     2.98     2.77   B(5):     3.17
+  ** in the wrong order ? (B2 < B1) **
+
+==> nPr.out <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      1.52     3.49     1.90     1.91   B(5):     3.49
+
+==> nBu.out <==
+  STERIC PARAMETERS:   L=  6.17
+  B(1) - B(4):      1.52     4.43     1.90     1.92   B(5):     4.54
+
+==> tBu.out <==
+  STERIC PARAMETERS:   L=  4.11
+  B(1) - B(4):      2.77     2.98     3.16     3.15   B(5):     3.17
+
+==> CH2iPr.out <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      1.52     4.21     1.90     3.16   B(5):     4.45
+
+==> cHex.out <==
+  STERIC PARAMETERS:   L=  6.17
+  B(1) - B(4):      2.76     3.49     3.16     1.91   B(5):     3.49
+
+==> Ad.out <==
+  STERIC PARAMETERS:   L=  6.17
+  B(1) - B(4):      3.49     3.49     3.16     3.16   B(5):     3.49
+
+==> Ph.out <==
+  STERIC PARAMETERS:   L=  6.28
+  B(1) - B(4):      3.11     3.11     1.71     1.71   B(5):     3.11
+
+==> Bn.out <==
+  STERIC PARAMETERS:   L=  4.62
+  B(1) - B(4):      1.52     6.02     3.10     3.13   B(5):     6.02
+
+==> 4ClPh.out <==
+  STERIC PARAMETERS:   L=  7.74
+  B(1) - B(4):      3.11     3.11     1.80     1.80   B(5):     3.11
+
+==> 4MePh.out <==
+  STERIC PARAMETERS:   L=  7.22
+  B(1) - B(4):      3.11     3.11     2.04     1.71   B(5):     3.11
+
+==> 4MeOPh.out <==
+  STERIC PARAMETERS:   L=  8.20
+  B(1) - B(4):      3.11     3.11     1.78     2.02   B(5):     3.11
+
+==> 35diMePh.out <==
+  STERIC PARAMETERS:   L=  6.28
+  B(1) - B(4):      4.26     4.26     2.05     1.71   B(5):     4.30
+
+==> 1Nap.out <==
+  STERIC PARAMETERS:   L=  6.28
+  B(1) - B(4):      5.50     3.11     1.72     1.71   B(5):     5.50
+
+==> CHPr2.out <==
+  STERIC PARAMETERS:   L=  6.17
+  B(1) - B(4):      5.67     1.90     4.43     2.79   B(5):     5.67
+
+==> CHEt2.out <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      4.41     1.90     3.49     2.77   B(5):     4.45
+
+==> CEt3.out <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      4.41     3.17     4.23     2.77   B(5):     4.45
+
+==> CH2tBu.out <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      1.52     4.22     3.15     3.16   B(5):     4.45
+
+==> CHiPr2 <==
+  STERIC PARAMETERS:   L=  5.05
+  B(1) - B(4):      3.69     2.05     4.42     4.41   B(5):     4.45
+
+
+==> To Do <==
+2-Napth; 2-MeOC6H4; 3,5-ditBuC6H3; 3-CF3C6H4; 3,5-diOMeC6H3
+2,3-diOMeC6H3_anti; 2,3-diOMeC6H3_syn
+1pyrene; 2OMe5MeC6H3; 2OMe5iPrC6H3; 345triOMeC6H2; 1Antracene
