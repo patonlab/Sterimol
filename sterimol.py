@@ -200,7 +200,11 @@ def twod_rot(vect,theta):#counterclockwise rotation of vector
    mat=[[a,-b],[b,a]]
    vect=np.dot(mat,vect)
    return vect
-
+def linearcheck(carts):
+   ans=0;xgrad=[];ygrad=[]
+   for row in carts:xgrad.append(round(np.gradient(row)[0],4));ygrad.append(round(np.gradient(row)[1],4))
+   if min(xgrad)==max(xgrad) and min(ygrad)==max(ygrad):ans=1
+   return ans
 # main class calculates the L, B1 and B5 parameters
 class calcSterimol:
    def __init__(self, file, radii, atomA, atomB):
@@ -312,8 +316,9 @@ class calcSterimol:
                      if z!=x and z!=y and pvdist>fragrad[z]:satpoint.append(pvdist)
                   if len(satpoint)==len(atomlist)-2:vlist.append(np.linalg.norm(nvect));alist.append([x,y]);#print x,y
       #print vlist, len(atomlist), min(vlist),alist[vlist.index(min(vlist))]
-      if len(vlist) > 0: self.B1=min(vlist)
-      else: self.B1 = 0.0
+      if linearcheck(twodcarts)==1:self.B1 = max(fragrad)
+      elif len(vlist) > 0: self.B1=min(vlist)
+      else: self.B1 = max(fragrad)
 
 if __name__ == "__main__":
    files = []
