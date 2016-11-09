@@ -41,7 +41,7 @@ Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
 
 Structure                 Tolman_CA   MC_dist         L        B1        B5
-RhCpMe5Cl2PMe3.com           173.97     1.833     4.016     3.902     4.304
+RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
 
 
 ```
