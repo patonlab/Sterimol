@@ -103,7 +103,7 @@ In this example two sets of parameters are produced - this occurs when the dimer
 * Errors will occur if this program is used on systems containing atoms for which there are no CPK defined radii.
 * When running on organic molecules, the directionality of `-a1` and `-a2` is important - make sure the `-a1` to `-a2` vector is closer to the functional group being measured.
 * It is possible to run on any number of files at once, for example using wildcards to specify all of the Gaussian files in a directory (*.out)
-* The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the $PATH variable.
+* The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the `$PATH` variable.
 
 
 
