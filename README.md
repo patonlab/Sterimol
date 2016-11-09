@@ -55,7 +55,7 @@ Calculating Sterimol parameters for a simple organic molecule (tert-butyl) from 
 ./sterimol.py -a1 2 -a2 1 tBu.com
 
 STERIMOL: using original CPK Van der Waals parameters
-Atoms 1 and 0 define the L-axis and direction [ 0.35667284  0.50439819 -0.8736515 ]
+Atoms 2 and 1 define the L-axis and direction [ 0.35667284  0.50439819 -0.8736515 ]
 
 Atom       Xco/A     Yco/A     Zco/A    VdW/pm
 ##############################################
