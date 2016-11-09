@@ -19,7 +19,7 @@ Developed by Dr Kelvin Jackson (Oxford) and [Prof Robert Paton](http://paton.che
 ```python
 sterimol.py file(s)
 ```
-* This program will read Gaussian input or output files or half sandwich complexes.
+* This program will read Gaussian input or output files or half-sandwich complexes.
 
 
 #####For organic molecules
