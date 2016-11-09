@@ -14,7 +14,7 @@ Developed by Dr Kelvin Jackson (Oxford) and [Prof Robert Paton](http://paton.che
 
 ####Correct Usage
 
-#####For half sandwich complexes
+#####For half-sandwich complexes
 
 ```python
 sterimol.py file(s)
