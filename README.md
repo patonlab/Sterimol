@@ -78,7 +78,7 @@ Structure                      L        B1        B5
 tBu.com                     4.05      2.73      3.14
 ```
 
-The output in this case returns the atom types, cartesian coordinates and atomic radii according to the CPK radial definitions. The sterimol parameters for the structure are given underneath; L, B1 and B5 are all given in Angstroms.
+The output in this case returns the atom types, Cartesian coordinates and atomic radii according to the CPK radial definitions. The sterimol parameters for the structure are given underneath; L, B1 and B5 are all given in Angstroms.
 
 ####Example 3:
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
@@ -96,7 +96,7 @@ Rh17_dimer_wB97XD.log       190.174     1.766     6.239     3.386     5.608
 
 ```
 
-In this example two sets of parameters are produced - this occurs when the dimeric complex does not have a symmetry plane and thus measurements from each of the two metal centers yeilds different results. In the case of symmetric dimers, only a single set of parameters is generated (as they would be the same when measured from either metal center).
+In this example two sets of parameters are produced - this occurs when the dimeric complex does not have a symmetry plane and thus measurements from each of the two metal centres yields different results. In the case of symmetric dimers, only a single set of parameters is generated (as they would be the same when measured from either metal centre).
 
 
 ####Tips and Troubleshooting
