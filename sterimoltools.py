@@ -9,7 +9,7 @@
 ###############################################################
 
 
-#Python Libraries 
+#Python Libraries
 import subprocess, sys, os
 from numpy import *
 from scipy import *
@@ -132,7 +132,7 @@ def elementID(massno):
 def bondiRadius(massno):
    #Bondi van der Waals radii for all atoms from: Bondi, A. J. Phys. Chem. 1964, 68, 441-452, except hydrogen, which is taken from Rowland, R. S.; Taylor, R. J. Phys. Chem. 1996, 100, 7384-7391
    #Radii that are not available in either of these publications have RvdW = 2.00 Angstrom
-   
+
    bondi = [0.0,1.09, 1.40, 1.82,2.00,2.00,1.70,1.55,1.52,1.47,1.54,2.27,1.73,2.00,2.10,1.80,1.80,1.75,1.88,2.75,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,1.63,1.40,1.39,1.87,2.00,1.85,1.90,
             1.85,2.02,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,1.63,1.72,1.58,1.93,2.17,2.00,2.06,1.98,2.16,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,1.72,1.66,1.55,1.96,2.02,2.00,2.00,2.00,
             2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,2.00,1.86]
@@ -180,8 +180,15 @@ def distcalc(atom1,atom2):
    dist = (x**2+y**2+z**2)**0.5
    return dist
 
+def dprod(v1, v2): return sum((a*b) for a, b in zip(v1, v2))
+
+def length(v): return math.sqrt(dprod(v, v))
+
 def angle(v1, v2):
-   return math.acos(np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2)))
+   val = dprod(v1, v2) / length(v1) / length(v2)
+   if val > 0.999999: val = 1.0
+   if val < -0.999999: val = -1.0
+   return math.acos(val)
 
 def dihedral(atoma,atomb,atomc,atomd):
    x1=atoma[0]
@@ -240,18 +247,18 @@ class getinData:
             if inlines[i].find("#") > -1:
                start = i+5
                break
-         
+
          for i in range(start,len(inlines)):
             if len(inlines[i].split()) == 0:
                break
             elif len(inlines[i].split()) == 4:
                self.CARTESIANS.append([float(inlines[i].split()[1]), float(inlines[i].split()[2]), float(inlines[i].split()[3])])
-                        
-      infile = open(file+".com","r") 
+
+      infile = open(file+".com","r")
       inlines = infile.readlines()
       getATOMTYPES(self, inlines)
       self.NATOMS=len(self.ATOMTYPES)
-      
+
       getCARTESIANS(self, inlines, self.NATOMS)
 
 
@@ -268,7 +275,7 @@ class getoutData:
          self.CARTESIANS = []
          if format == "Gaussian":
             for i in range(0,len(outlines)):
-               
+
                if outlines[i].find("Standard orientation") > -1:
                   standor = i
                   arb=0
@@ -389,7 +396,7 @@ def ncoord(natom, rcov, atomtype, coords):
             for k in range(0,max_elem):
                if atomtype[i].find(elements[k])>-1:Zi=k
                if atomtype[iat].find(elements[k])>-1:Ziat=k
-            
+
             rco = rcov[Zi]+rcov[Ziat]
             rco = rco*k2
             rr=rco/r
@@ -405,25 +412,23 @@ def linearcheck(carts):
    return ans
 
 class calcSterimol:
-   def __init__(self, file, radii, atomA, atomB):
-      
+   def __init__(self, file, radii, atomA, atomB,verbose):
+
       if len(file.split(".com"))>1 or len(file.split(".gjf"))>1: fileData = getinData(file.split(".")[0])
       if len(file.split(".out"))>1 or len(file.split(".log"))>1: fileData = getoutData(file.split(".")[0])
-      
+
       # initialize the array of atomic vdw radii
       molcart = fileData.CARTESIANS; atomtype = fileData.ATOMTYPES; natoms = len(molcart); vdw_radii = []
-      
+
       if radii == "cpk":
-         print "\n   STERIMOL: using original CPK Van der Waals parameters"
          atomic_co_no = ncoord(natoms, rcov, atomtype, molcart)
          sterimol_types = generate_atom_types(atomtype, atomic_co_no)
          #print sterimol_types
          for i in range(0,natoms):
             for j in range(0,len(sterimol_atomtypes)):
                if sterimol_types[i] == sterimol_atomtypes[j]: vdw_radii.append(cpk_radii[j]/100.00)
-   
+
       if radii == "bondi":
-         print "\n   STERIMOL: using Bondi Van der Waals parameters"
          for i in range(0,natoms): vdw_radii.append(bondiRadius(periodictable.index(fileData.ATOMTYPES[i])))
 
 # Define vector along the L-axis connecting base atom and the next attached atom
@@ -433,21 +438,23 @@ class calcSterimol:
       next_atom = molcart[atomB]
       vect1=np.subtract(getcoords(atomA,molcart),next_atom)
       aA=atomA+1;aB=atomB+1
-      print "   Atoms", aA, "and", aB, "define the L-axis and direction", vect1
-      
-      print "\n", "   Atom ".ljust(9), "  Xco/A".rjust(9), "  Yco/A".rjust(9), "  Zco/A".rjust(9), " VdW/pm".rjust(9)
-      print "   ##############################################"
+      if verbose == True:
+          print "   Atoms", atomA, "and", atomB, "define the L-axis and direction", vect1
+
+          print "\n", "   Atom ".ljust(9), "  Xco/A".rjust(9), "  Yco/A".rjust(9), "  Zco/A".rjust(9), " VdW/pm".rjust(9)
+          print "   ##############################################"
       # Remove the base atom from the list of atoms to be considered for sterics (after printing all)
       atomlist = list(xrange(0,natoms))
-      for atom in atomlist:
-         if radii == "cpk": print "  ", sterimol_types[atom].ljust(6),
-         if radii == "bondi": print "  ", atomtype[atom].ljust(6),
-         for coord in molcart[atom]:
-            if coord < 0.0: print "   %.3f".rjust(6) % coord,
-            else: print "    %.3f".rjust(6) % coord,
-         print "    %.1f" % round(vdw_radii[atom]*100)
+      if verbose == True:
+          for atom in atomlist:
+             if radii == "cpk": print "  ", sterimol_types[atom].ljust(6),
+             if radii == "bondi": print "  ", atomtype[atom].ljust(6),
+             for coord in molcart[atom]:
+                if coord < 0.0: print "   %.3f".rjust(6) % coord,
+                else: print "    %.3f".rjust(6) % coord,
+             print "    %.1f" % round(vdw_radii[atom]*100)
       atomlist.remove(atomA)
-      
+
       adjlist=[]; opplist=[]; theta=[]
       for i in atomlist:
          vect2=np.subtract(getcoords(atomA,molcart),getcoords(i,molcart))
@@ -461,11 +468,11 @@ class calcSterimol:
    #self.lval=max(adjlist)-minval
    # A bit weird, but seems like original sterimol adds on the difference between the bond length and vdw radius of atom B. For a C-H bond this is 1.50 - 1.10 = 0.40 Angstrom)
       self.lval=max(adjlist)+0.40
-      
+
       ###Useful - do not delete!
       #print "   B5 atom", atomlist[opplist.index(max(opplist))]+1, "distance", max(opplist)
       #print "   Highest atom", atomlist[adjlist.index(max(adjlist))]+1,"distance", max(adjlist),"\n   Lowest atom", atomlist[minadjlist.index(min(minadjlist))]+1,"distance", min(minadjlist)
-      
+
       zcarts=[]#zeroed carts
       for i in atomlist: zcarts.append(np.subtract(molcart[i],molcart[atomA]))
       zvect=[0,0,1]
@@ -483,12 +490,12 @@ class calcSterimol:
          d=d+fragrad[t]
          singledist.append(d)
       self.newB5=max(singledist) #This is the same as the 3D calculated value from above
-      
+
       center=[0,0]
       vlist=[]#list of distances from the origin to the tangential vectors
       alist=[]#list of atoms between which the tangential vectors pass through no other atoms
       iav=[]#interatomic vectors
-      
+
       for x in range(len(twodcarts)):
          for y in range(len(twodcarts)):
             if x!=y:
@@ -523,7 +530,7 @@ def calcSandwich(file):
    if file.split(".")[1]=="com" or file.split(".")[1]=="gjf":fileData=getinData(file.split(".")[0])
    for i in range(len(fileData.ATOMTYPES)):
       if fileData.ATOMTYPES[i] in metals:metalatoms.append(i)
-   
+
    ivals=[]
    jvals=[]
    for i in range(len(fileData.ATOMTYPES)):
@@ -536,11 +543,11 @@ def calcSandwich(file):
    for a in range(len(ivals)):
       rar=[]
       rar.append(ivals[a])
-         
+
       for b in range(len(ivals)):
          if ivals[a]==ivals[b]:rar.append(jvals[b])
       if rar not in conpar:conpar.append(rar)
-   
+
    allrings=[]
    for a in range(len(conpar)):
       z=conpar[a][0]
@@ -571,7 +578,7 @@ def calcSandwich(file):
    mcdists=[]
    mcdist=9999
    for ring in allrings:
-      
+
       if len(ring)==5:
          tolman=[]
          cent=avpoints(ring,fileData.CARTESIANS)
@@ -612,7 +619,7 @@ def calcSandwich(file):
          if ring[0]!=ring[1]:
             for k in ringang:
                tlist=[];tang=[];tfrag=[]
-               
+
                for h in range(len(frag)):
                   if k-interval<omega[h]<k+interval:tlist.append(frag[h])
                   if k>(180-interval) and k-interval<omega[h]+360<k+interval:tlist.append(frag[h])
@@ -629,7 +636,7 @@ def calcSandwich(file):
          molcart=fileData.CARTESIANS
          zcarts=[]
          for i in frag:
-            zcarts.append(np.subtract(molcart[i],molcart[metal]))   
+            zcarts.append(np.subtract(molcart[i],molcart[metal]))
          zvect=[0,0,1]
          zcent=np.subtract(cent,molcart[metal])
          for cart in range(len(zcarts)):

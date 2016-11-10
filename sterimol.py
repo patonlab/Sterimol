@@ -38,8 +38,9 @@ if __name__ == "__main__":
    else: print "\nWrong number of arguments used. Correct format: sterimol.py (-radii cpk/bondi) (-a1 atomid) (-a2 atomid) file(s)\n"; sys.exit()
    if jobtype==1:
       for file in files:
-         file_Params = calcSterimol(file, radii, atom1, atom2)
+         file_Params = calcSterimol(file, radii, atom1, atom2, True)
          lval = file_Params.lval; B1 = file_Params.B1; B5 = file_Params.newB5
+         print "\n   STERIMOL: using", radii, "van der Waals parameters"
          print "\n","   Structure".ljust(25),"L".rjust(9),"B1".rjust(9),"B5".rjust(9)
          print "   "+file.ljust(22), "  %.2f".rjust(9) % lval, "  %.2f".rjust(9) % B1, "  %.2f".rjust(9) % B5
          print ""
@@ -49,4 +50,3 @@ if __name__ == "__main__":
       for file in files:
          calcSandwich(file)
       print "\n"
-
