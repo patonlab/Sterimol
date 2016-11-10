@@ -35,7 +35,7 @@ sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 Calculating Tolman cone angles, metal to ring-centroid distances, and Sterimol parameters for a half-sandwich complex from a Gaussian output file.
 
 ```python
-./sterimol.py RhCpMe5Cl2PMe3.log
+python sterimol.py examples/RhCpMe5Cl2PMe3.log
 
 Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
@@ -52,39 +52,40 @@ The output shows the tolman cone angle (in degrees) and metal to centroid distan
 Calculating Sterimol parameters for a simple organic molecule (tert-butyl) from a Gaussian input.
 
 ```python
-./sterimol.py -a1 2 -a2 1 tBu.com
+python sterimol.py -a1 2 -a2 1 examples/tBu.gjf
 
-STERIMOL: using original CPK Van der Waals parameters
-Atoms 2 and 1 define the L-axis and direction [ 0.35667284  0.50439819 -0.8736515 ]
+   STERIMOL: using original CPK Van der Waals parameters
+   Atoms 1 and 2 define the L-axis and direction [ 1.1  0.   0. ]
 
-Atom       Xco/A     Yco/A     Zco/A    VdW/pm
-##############################################
-C         -0.893     1.083     0.000     150.0
-H         -0.536     1.588    -0.874     100.0
-C         -0.379     1.809     1.257     150.0
-H          0.691     1.808     1.258     100.0
-H         -0.734     2.819     1.256     100.0
-H         -0.737     1.306     2.131     100.0
-C         -2.433     1.084     0.000     150.0
-H         -2.789     2.092     0.000     100.0
-H         -2.789     0.579    -0.874     100.0
-H         -2.789     0.579     0.873     100.0
-C         -0.379    -0.368     0.000     150.0
-H         -0.736    -0.873    -0.874     100.0
-H          0.691    -0.368    -0.000     100.0
-H         -0.736    -0.873     0.874     100.0
+   Atom       Xco/A     Yco/A     Zco/A    VdW/pm
+   ##############################################
+   H          0.000     0.000     0.000     100.0
+   C         -1.100     0.000     0.000     150.0
+   C         -1.610     1.030     1.030     150.0
+   H         -2.710     1.030     1.030     100.0
+   H         -1.250     0.760     2.030     100.0
+   H         -1.250     2.030     0.760     100.0
+   C         -1.610     0.380    -1.400     150.0
+   H         -2.710     0.380    -1.400     100.0
+   H         -1.250     1.380    -1.670     100.0
+   H         -1.250    -0.360    -2.140     100.0
+   C         -1.610    -1.400     0.380     150.0
+   H         -2.710    -1.400     0.380     100.0
+   H         -1.250    -2.140    -0.360     100.0
+   H         -1.250    -1.670     1.380     100.0
 
-Structure                      L        B1        B5
-tBu.com                     4.05      2.73      3.14
+   Structure                      L        B1        B5
+   examples/tBu.gjf            4.11      2.76      3.17
+
 ```
 
-The output in this case returns the atom types, Cartesian coordinates and atomic radii according to the CPK radial definitions. The sterimol parameters for the structure are given underneath; L, B1 and B5 are all given in Angstroms.
+The output in this case returns the element types, Cartesian coordinates and atomic radii according to the CPK radial definitions. The Sterimol parameters for the structure are underneath; L, B1 and B5 are all given in Angstroms.
 
 ####Example 3:
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
 
 ```python
-./sterimol.py Rh2Cl4IndStar2.log
+python sterimol.py examples/Rh2Cl4IndStar2.log
 
 Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
