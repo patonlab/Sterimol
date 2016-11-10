@@ -1,4 +1,4 @@
-Substituent, Original Fortran, , ,Python (CPK radii), , , Python (Bondi radii), , , ,
+Substituent, Original Fortran, , , , Python (CPK radii), , , , Python (Bondi radii), , 
 ,L,B1,B5, ,pyL1,pyB1,pyB5, ,bondiL1,bondiB1,bondiB5
 H,2.06,1.00,1.00,,2.06,1.00,1.00,,2.15,1.09,1.09
 Me,3.00,1.52,2.04,,3.00,1.52,2.04,,3.2,1.65,2.13
