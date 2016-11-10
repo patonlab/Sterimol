@@ -665,16 +665,6 @@ def calcSandwich(file):
          B1=round(min(vlist),3)
          print "   "+file.ljust(25),str(tolmanCA).rjust(9), str(smcdist).rjust(9), str(lval).rjust(9),str(B1).rjust(9), str(newB5).rjust(9)
 
-
-
-#!/usr/bin/python
-"""
-Python translation of pars.f from Prof. S Grimme's DFT-D3 correction
-"""
-#######################################################################
-
-import math
-
 molmod=[['Bq', 0, 0, 0, 0],
         ['H', 1, 1, 1, 1],
         ['He', 0, 0, 0, 0],
@@ -794,7 +784,6 @@ molmod=[['Bq', 0, 0, 0, 0],
         ['Uuh', 0, 0, 0, 0],
         ['Uus', 0, 0, 0, 0],
         ['Uuo', 0, 0, 0, 0],]
-
 
 elements = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si",
 			"P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni",
