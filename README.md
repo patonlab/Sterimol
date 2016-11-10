@@ -52,7 +52,7 @@ The output shows the tolman cone angle (in degrees) and metal to centroid distan
 Calculating Sterimol parameters for an organic functional group (e.g. tert-butyl) from a Gaussian-formatted input file.
 
 ```python
-python sterimol.py -a1 2 -a2 1 examples/tBu.gjf
+python sterimol.py -a1 2 -a2 1 examples/tBu.com
 
    STERIMOL: using original CPK Van der Waals parameters
    Atoms 1 and 2 define the L-axis and direction [ 1.1  0.   0. ]
