@@ -49,7 +49,7 @@ RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
 The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii. 
 
 ####Example 2:
-Calculating Sterimol parameters for a simple organic molecule (tert-butyl) from a Gaussian input.
+Calculating Sterimol parameters for an organic functional group (e.g. tert-butyl) from a Gaussian-formatted input file.
 
 ```python
 python sterimol.py -a1 2 -a2 1 examples/tBu.gjf
