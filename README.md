@@ -49,7 +49,7 @@ RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
 The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii. 
 
 ####Example 2:
-Calculating Sterimol parameters for an organic functional group (e.g. tert-butyl) from a Gaussian-formatted input file.
+Calculating Sterimol parameters for an organic functional group (e.g. *tert*-butyl) from a Gaussian-formatted input file.
 
 ```python
 python sterimol.py -a1 2 -a2 1 examples/tBu.com
@@ -85,15 +85,14 @@ The output in this case returns the element types, Cartesian coordinates and ato
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
 
 ```python
-python sterimol.py examples/Rh2Cl4IndStar2.log
+python sterimol.py examples/Rh_AsymmetricDimer.log
 
 Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
 
-Structure                 Tolman_CA   MC_dist         L        B1        B5
-Rh17_dimer_wB97XD.log       191.283     1.763     6.184     3.381     5.607
-Rh17_dimer_wB97XD.log       190.174     1.766     6.239     3.386     5.608
-
+   Structure                 Tolman_CA   MC_dist         L        B1        B5
+   Rh_AsymmetricDimer.log      191.283     1.763     6.184     3.381     5.607
+   Rh_AsymmetricDimer.log      190.174     1.766     6.239     3.386     5.608
 
 ```
 
