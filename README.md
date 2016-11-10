@@ -105,8 +105,8 @@ In this example two sets of parameters are produced - this occurs when the dimer
 * It is possible to run on any number of files at once, for example using wildcards to specify all of the Gaussian files in a directory (*.out)
 * The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the `$PATH` variable.
 
-
-#####Citing Sterimol.py
+=====
+####Citing Sterimol.py
 *Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *manuscript in preparation*
 
 
