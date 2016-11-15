@@ -516,6 +516,7 @@ class calcSterimol:
 def symcheck(carts):#Add symmetry criteria
    center=[0,0]
    distlist=[]
+   distlist.append(10)
    for a in range(len(carts)):
       for b in range(len(carts)):
          if a!=b:
