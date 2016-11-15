@@ -475,8 +475,11 @@ class calcSterimol:
       vlist=[]#list of distances from the origin to the tangential vectors
       alist=[]#list of atoms between which the tangential vectors pass through no other atoms
       iav=[]#interatomic vectors
-
+      sym=symcheck(twodcarts)
       for x in range(len(twodcarts)):
+         if sym==1:
+            twodcarts[x][0]=twodcarts[x][0]+0.000001
+            twodcarts[x][1]=twodcarts[x][1]+0.000001
          for y in range(len(twodcarts)):
             if x!=y:
                try:nvect= (twod_vect(center,twodcarts[x],twodcarts[y]))#origin normal vector to connecting atomic centers vector
@@ -489,20 +492,30 @@ class calcSterimol:
                except RuntimeWarning:pass#unvect=[0,0]
                xradv=twod_rot(unvect*fragrad[x],theta)
                yradv=twod_rot(unvect*fragrad[y],theta)
+               mvect= (twod_vect(center,twodcarts[x]-xradv,twodcarts[y]-yradv))
                nvect= (twod_vect(center,twodcarts[x]+xradv,twodcarts[y]+yradv))#origin normal vector to connecting atomic surfaces tangential vector
                newx=twodcarts[x]+xradv
                newy=twodcarts[y]+yradv
+               mewx=twodcarts[x]-xradv
+               mewy=twodcarts[y]-yradv
                if np.cross(nvect,xradv)<0.000000001 and theta!=np.pi/2:
                   satpoint=[]#Satisfied points not within range of tangential vector
                   for z in range(len(twodcarts)):
                      pvdist=twod_dist(twodcarts[z],newx,newy)
                      if z!=x and z!=y and pvdist>fragrad[z]:satpoint.append(pvdist)
                   if len(satpoint)==len(atomlist)-2:vlist.append(np.linalg.norm(nvect));alist.append([x,y]);#print x,y
-      #print vlist, len(atomlist), min(vlist),alist[vlist.index(min(vlist))]
+                  satpoint=[]
+                  for z in range(len(twodcarts)):
+                     pvdist=twod_dist(twodcarts[z],mewx,mewy)
+                     if z!=x and z!=y and pvdist>fragrad[z]:satpoint.append(pvdist)
+                  if len(satpoint)==len(atomlist)-2:vlist.append(np.linalg.norm(mvect));alist.append([x,y])
       if linearcheck(twodcarts)==1:self.B1 = max(fragrad)
       elif len(vlist) > 0: self.B1=min(vlist)
       else: self.B1 = max(fragrad)
 
+def symcheck(carts):#Add symmetry criteria
+   ans=1
+   return ans
 
 def calcSandwich(file):
    metalatoms=[]
