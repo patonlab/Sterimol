@@ -514,7 +514,15 @@ class calcSterimol:
       else: self.B1 = max(fragrad)
 
 def symcheck(carts):#Add symmetry criteria
-   ans=1
+   center=[0,0]
+   distlist=[]
+   for a in range(len(carts)):
+      for b in range(len(carts)):
+         if a!=b:
+            dist=np.linalg.norm(twod_vect(center,carts[a],carts[b]))
+            distlist.append(dist)
+   if min(distlist)<0.0000000001:ans=1
+   else:ans=0
    return ans
 
 def calcSandwich(file):
