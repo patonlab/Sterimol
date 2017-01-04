@@ -107,7 +107,7 @@ In this example two sets of parameters are produced - this occurs when the dimer
 
 =====
 ####Citing Sterimol.py
-*Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *manuscript in preparation*
+*Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *J. Am. Chem. Soc.* **2017** [DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
 
 
 License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
