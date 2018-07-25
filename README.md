@@ -99,20 +99,21 @@ STERIMOL: using original CPK Van der Waals parameters
 In this example two sets of parameters are produced - this occurs when the dimeric complex does not have a symmetry plane and thus measurements from each of the two metal centres yields different results. In the case of symmetric dimers, only a single set of parameters is generated (as they would be the same when measured from either metal centre).
 
 
-####Tips and Troubleshooting
+**Tips and Troubleshooting**
 * Errors will occur if this program is used on systems containing atoms for which there are no CPK defined radii.
 * When running on organic molecules, the directionality of `-a1` and `-a2` is important - make sure the `-a1` to `-a2` vector is pointing towards the functional group being measured.
 * It is possible to run on any number of files at once, for example using wildcards to specify all of the Gaussian files in a directory (*.out)
 * The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the `$PATH` variable.
 
-=====
+#### Papers citing Sterimol.py
+1. *Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *J. Am. Chem. Soc.* **2017** *139*, 1296–1310[DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
+2. *Improved correlation between animal and human potency of non-steroidal anti-inflammatory drugs using quantitative structure–activity relationships (QSARs).* Dearden, J.;  Hewitt, M. M.; Bresnen, G. N.; Gregg, C. SAR and QSAR in Environmental Research. **2017**, *28* 1-9[DOI: 10.1080/1062936X.2017.1351391](http://dx.doi.org/10.1080/1062936X.2017.1351391) 
 
-####Citing Sterimol.py
+#### References for the underlying theory
+1. Verloop, A. Drug Design Vol. III, Academic P.; Ariens, E. J., Ed.; 1976.
 
-*Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *J. Am. Chem. Soc.* **2017** *139*, 1296–1310[DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
-
-*Improved correlation between animal and human potency of non-steroidal anti-inflammatory drugs using quantitative structure–activity relationships (QSARs).* Dearden, J.;  Hewitt, M. M.; Bresnen, G. N.; Gregg, C. SAR and QSAR in Environmental Research. **2017**, *28* 1-9[DOI: 10.1080/1062936X.2017.1351391](http://dx.doi.org/10.1080/1062936X.2017.1351391) 
-
+[![DOI](https://zenodo.org/badge/54848929.svg)](https://zenodo.org/badge/latestdoi/54848929)
+---
 License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 
 
