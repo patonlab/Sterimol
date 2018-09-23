@@ -6,7 +6,7 @@ Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://
 
 ![sterimol](sterimol.jpg)
 
-This code is no longer actively supported. We recommend using [wsterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
+This code is no longer actively supported. We recommend using [wSterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
 
 #### Installation
