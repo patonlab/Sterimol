@@ -1,4 +1,4 @@
-#Sterimol.py
+# Sterimol.py
 
 A commandline Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016.
 
@@ -7,14 +7,14 @@ Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://
 This code is no longer actively supported. We recommend using [wsterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
 
-####Installation
+#### Installation
 1. Download the scripts from https://github.com/bobbypaton/Sterimol
 2. Add the directory of the scripts to the PATH environmental variable (optional).  
 3.	Run the script with Gaussian input or output files.
 
-####Correct Usage
+#### Correct Usage
 
-#####For half-sandwich complexes
+##### For half-sandwich complexes
 
 ```
 sterimol.py file(s)
@@ -22,7 +22,7 @@ sterimol.py file(s)
 * This program will read Gaussian input or output files or half-sandwich complexes.
 
 
-#####For organic molecules
+##### For organic molecules
 
 ```
 sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
@@ -31,7 +31,7 @@ sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 * The `-radii` option specifies the radial model used; it may be set to `-radii bondi` or `-radii cpk` for either van der Waals radii from [Bondi](http://pubs.acs.org/doi/abs/10.1021/j100785a001) or [CPK](https://en.wikipedia.org/wiki/Space-filling_model). If left blank, the default setting uses the original CPK radii.
 
 
-####Example 1:
+#### Example 1:
 Calculating Tolman cone angles, metal to ring-centroid distances, and Sterimol parameters for a half-sandwich complex from a Gaussian output file.
 
 ```
@@ -46,7 +46,7 @@ RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
 
 The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii.
 
-####Example 2:
+#### Example 2:
 Calculating Sterimol parameters for an organic functional group (e.g. *tert*-butyl) from a Gaussian-formatted input file.
 
 ```
@@ -78,7 +78,7 @@ python sterimol.py -a1 2 -a2 1 examples/tBu.com
 
 The output in this case returns the element types, Cartesian coordinates and atomic radii according to the CPK radial definitions. The Sterimol parameters for the structure are underneath; L, B1 and B5 are all given in Angstroms.
 
-####Example 3:
+#### Example 3:
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
 
 ```
