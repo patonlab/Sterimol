@@ -1,10 +1,10 @@
 # Sterimol.py
 
-A commandline Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016.
-
-Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://wwww.patonlab.com) at Colorado State University.
+[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
 
 ![sterimol](sterimol.jpg)
+
+A commandline Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016. Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://wwww.patonlab.com) at Colorado State University.
 
 This code is no longer actively supported. We recommend using [wSterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
@@ -111,6 +111,5 @@ In this example two sets of parameters are produced - this occurs when the dimer
 #### References for the underlying theory
 1. Verloop, A. Drug Design Vol. III, Academic P.; Ariens, E. J., Ed.; 1976.
 
-[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
 ---
 License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
