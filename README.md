@@ -1,6 +1,6 @@
 # Sterimol.py
 
-[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
+[![PyPI version](https://badge.fury.io/py/sterimol.svg)](https://badge.fury.io/py/sterimol)[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
 
 ![sterimol](sterimol.jpg)
 
@@ -10,9 +10,12 @@ This code is no longer actively supported. We recommend using [wSterimol](https:
 
 
 #### Installation
-1. Download the scripts from https://github.com/bobbypaton/Sterimol
-2. Add the directory of the scripts to the PATH environmental variable (optional).  
-3.	Run the script with Gaussian input or output files.
+Sterimol runs as a Python module. There are two ways to make this work below. In both cases, you won't need to copy the scripts to your working directory. 
+1. The easy way: `pip install sterimol` 
+2. Download the package from [https://github.com/bobbypaton/Sterimol](https://github.com/bobbypaton/Sterimol). Set the environment variable PYTHONPATH to point to the location of the 'Sterimol' folder. For example in OSX, this is done by adding the following (example) line to .bash_profile: `export PYTHONPATH=$PYTHONPATH:/Users/username/Documents/Sterimol` 
+3.	Now run the script with Gaussian input or output files as `python -m sterimol file(s)`
+
+N.B. If you do want to run the scripts directly (i.e. not as a module) you may need to delete a single period on line 24 of sterimol.py (i.e. `from sterimoltools import * `)
 
 #### Correct Usage
 
@@ -27,7 +30,7 @@ sterimol.py file(s)
 ##### For organic molecules
 
 ```
-sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
+python -m sterimol (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 ```
 * `-a1` and `-a2` specify atoms A and B atoms for the calculation - these fields are mandatory as they specify the axis along which Sterimol parameters are calculated.
 * The `-radii` option specifies the radial model used; it may be set to `-radii bondi` or `-radii cpk` for either van der Waals radii from [Bondi](http://pubs.acs.org/doi/abs/10.1021/j100785a001) or [CPK](https://en.wikipedia.org/wiki/Space-filling_model). If left blank, the default setting uses the original CPK radii.
@@ -37,7 +40,7 @@ sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 Calculating Tolman cone angles, metal to ring-centroid distances, and Sterimol parameters for a half-sandwich complex from a Gaussian output file.
 
 ```
-python sterimol.py examples/RhCpMe5Cl2PMe3.log
+python -m sterimol examples/RhCpMe5Cl2PMe3.log
 
 Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
@@ -52,7 +55,7 @@ The output shows the tolman cone angle (in degrees) and metal to centroid distan
 Calculating Sterimol parameters for an organic functional group (e.g. *tert*-butyl) from a Gaussian-formatted input file.
 
 ```
-python sterimol.py -a1 2 -a2 1 examples/tBu.com
+python -m sterimol -a1 2 -a2 1 examples/tBu.com
 
    STERIMOL: using original CPK Van der Waals parameters
    Atoms 1 and 2 define the L-axis and direction [ 1.1  0.   0. ]
@@ -84,7 +87,7 @@ The output in this case returns the element types, Cartesian coordinates and ato
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
 
 ```
-python sterimol.py examples/Rh_AsymmetricDimer.log
+python -m sterimol examples/Rh_AsymmetricDimer.log
 
 Sandwich Analysis
 STERIMOL: using original CPK Van der Waals parameters
