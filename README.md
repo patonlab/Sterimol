@@ -4,6 +4,8 @@ A commandline Python program for the calculation of multi-dimensional [Sterimol]
 
 Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://wwww.patonlab.com) at Colorado State University.
 
+![sterimol](sterimol.jpg)
+
 This code is no longer actively supported. We recommend using [wsterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
 
