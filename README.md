@@ -1,10 +1,10 @@
-Sterimol.py
-=====
+#Sterimol.py
 
-Python program for the calculation of [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016.
+A commandline Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016.
 
-Developed by Dr Kelvin Jackson (Oxford) and [Prof Robert Paton](http://paton.chem.ox.ac.uk) (Oxford).
+Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://wwww.patonlab.com) at Colorado State University.
 
+This code is no longer actively supported. We recommend using [wsterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
 
 ####Installation
@@ -46,7 +46,7 @@ RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
 
 ```
 
-The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii. 
+The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii.
 
 ####Example 2:
 Calculating Sterimol parameters for an organic functional group (e.g. *tert*-butyl) from a Gaussian-formatted input file.
@@ -106,8 +106,9 @@ In this example two sets of parameters are produced - this occurs when the dimer
 * The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the `$PATH` variable.
 
 #### Papers citing Sterimol.py
-1. *Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; **Jackson, K. E.**; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; **Paton, R. S.**; Rovis, T. *J. Am. Chem. Soc.* **2017** *139*, 1296–1310[DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
-2. *Improved correlation between animal and human potency of non-steroidal anti-inflammatory drugs using quantitative structure–activity relationships (QSARs).* Dearden, J.;  Hewitt, M. M.; Bresnen, G. N.; Gregg, C. SAR and QSAR in Environmental Research. **2017**, *28* 1-9[DOI: 10.1080/1062936X.2017.1351391](http://dx.doi.org/10.1080/1062936X.2017.1351391) 
+1. *Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; Jackson, K. E.; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; Paton, R. S.; Rovis, T. *J. Am. Chem. Soc.* **2017** *139*, 1296–1310[DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
+2. *Improved correlation between animal and human potency of non-steroidal anti-inflammatory drugs using quantitative structure–activity relationships (QSARs).* Dearden, J.;  Hewitt, M. M.; Bresnen, G. N.; Gregg, C. SAR and QSAR in Environmental Research. **2017**, *28* 1-9[DOI: 10.1080/1062936X.2017.1351391](http://dx.doi.org/10.1080/1062936X.2017.1351391)
+3. *Enantiodivergent Pd-catalyzed C–C bond formation enabled through ligand parameterization* Zhao, S.; Gensch, T.; Murray, B.; Niemeyer, Z. L.; Sigman, M. S.; Biscoe, M. R. *Science* **2018**, *eaat2299* [DOI: 10.1126/science.aat2299](http://dx.doi.org/10.1126/science.aat2299)
 
 #### References for the underlying theory
 1. Verloop, A. Drug Design Vol. III, Academic P.; Ariens, E. J., Ed.; 1976.
@@ -115,5 +116,3 @@ In this example two sets of parameters are produced - this occurs when the dimer
 [![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
 ---
 License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
-
-
