@@ -16,7 +16,7 @@ This code is no longer actively supported. We recommend using [wsterimol](https:
 
 #####For half-sandwich complexes
 
-```python
+```
 sterimol.py file(s)
 ```
 * This program will read Gaussian input or output files or half-sandwich complexes.
@@ -24,7 +24,7 @@ sterimol.py file(s)
 
 #####For organic molecules
 
-```python
+```
 sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 ```
 * `-a1` and `-a2` specify atoms A and B atoms for the calculation - these fields are mandatory as they specify the axis along which Sterimol parameters are calculated.
@@ -34,7 +34,7 @@ sterimol.py (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 ####Example 1:
 Calculating Tolman cone angles, metal to ring-centroid distances, and Sterimol parameters for a half-sandwich complex from a Gaussian output file.
 
-```python
+```
 python sterimol.py examples/RhCpMe5Cl2PMe3.log
 
 Sandwich Analysis
@@ -42,8 +42,6 @@ STERIMOL: using original CPK Van der Waals parameters
 
 Structure                 Tolman_CA   MC_dist         L        B1        B5
 RhCpMe5Cl2PMe3.log           173.97     1.833     4.016     3.902     4.304
-
-
 ```
 
 The output shows the tolman cone angle (in degrees) and metal to centroid distance, L, B1 and B5 (all in Angstrom). Cone angles and Sterimol parameters are calculated using the original CPK atomic radii.
@@ -51,7 +49,7 @@ The output shows the tolman cone angle (in degrees) and metal to centroid distan
 ####Example 2:
 Calculating Sterimol parameters for an organic functional group (e.g. *tert*-butyl) from a Gaussian-formatted input file.
 
-```python
+```
 python sterimol.py -a1 2 -a2 1 examples/tBu.com
 
    STERIMOL: using original CPK Van der Waals parameters
@@ -76,7 +74,6 @@ python sterimol.py -a1 2 -a2 1 examples/tBu.com
 
    Structure                      L        B1        B5
    examples/tBu.gjf            4.11      2.76      3.17
-
 ```
 
 The output in this case returns the element types, Cartesian coordinates and atomic radii according to the CPK radial definitions. The Sterimol parameters for the structure are underneath; L, B1 and B5 are all given in Angstroms.
@@ -84,7 +81,7 @@ The output in this case returns the element types, Cartesian coordinates and ato
 ####Example 3:
 Calculating parameters for a dimeric half-sandwich complex from a Gaussian output file.
 
-```python
+```
 python sterimol.py examples/Rh_AsymmetricDimer.log
 
 Sandwich Analysis
@@ -93,7 +90,6 @@ STERIMOL: using original CPK Van der Waals parameters
    Structure                 Tolman_CA   MC_dist         L        B1        B5
    Rh_AsymmetricDimer.log      191.283     1.763     6.184     3.381     5.607
    Rh_AsymmetricDimer.log      190.174     1.766     6.239     3.386     5.608
-
 ```
 
 In this example two sets of parameters are produced - this occurs when the dimeric complex does not have a symmetry plane and thus measurements from each of the two metal centres yields different results. In the case of symmetric dimers, only a single set of parameters is generated (as they would be the same when measured from either metal centre).
