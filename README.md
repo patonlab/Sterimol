@@ -1,6 +1,7 @@
 # Sterimol.py
 
-[![PyPI version](https://badge.fury.io/py/sterimol.svg)](https://badge.fury.io/py/sterimol)[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
+[![PyPI version](https://badge.fury.io/py/sterimol.svg)](https://badge.fury.io/py/sterimol)
+[![DOI](https://zenodo.org/badge/55379766.svg)](https://zenodo.org/badge/latestdoi/55379766)
 
 ![sterimol](sterimol.jpg)
 
