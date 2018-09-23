@@ -1,3 +1,9 @@
 ccParse.py
 pars.py
+*pyc
 *.xlsx
+setup.py
+build
+dist
+MANIFEST.in
+*egg-info

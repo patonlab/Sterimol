@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import print_function, absolute_import
 
 
 ###Sterimol (and Tolman CA) Calculator###
@@ -62,7 +63,7 @@ def genradii(atom,molcart,aty):
    type=aty[atom]
    arow=periodictable.index(type)
    radius=molmod[arow][con]
-   if radius==0:radius=1;print "Warning: No atomic radii found", arow, con
+   if radius==0:radius=1;print("Warning: No atomic radii found", arow, con)
    return radius
 
 def rotrel(vect1,vect2,vect3):
@@ -187,7 +188,7 @@ def dihedral(atoma,atomb,atomc,atomd):
 class getinData:
    def __init__(self, file):
       if not os.path.exists(file+".com"):
-         print ("\nFATAL ERROR: Input file [ %s ] does not exist"%file)
+         print(("\nFATAL ERROR: Input file [ %s ] does not exist"%file))
       def getATOMTYPES(self, inlines):
          self.ATOMTYPES = []
          self.LEVELTYPES = []
@@ -230,7 +231,7 @@ class getoutData:
    def __init__(self, file):
       if not os.path.exists(file+".out"):
          if not os.path.exists(file+".log"):
-            print ("\nFATAL ERROR: Output file [ %s ] does not exist"%file)
+            print(("\nFATAL ERROR: Output file [ %s ] does not exist"%file))
       def getFORMAT(self, outlines):
          for i in range(0,len(outlines)):
             if outlines[i].find("Gaussian") > -1: self.FORMAT = "Gaussian"; break
@@ -397,20 +398,20 @@ class calcSterimol:
       next_atom = molcart[atomB]
       vect1=np.subtract(getcoords(atomA,molcart),next_atom)
       if verbose == True:
-          print "   Atoms", atomA, "and", atomB, "define the L-axis and direction", vect1
+          print("   Atoms", atomA, "and", atomB, "define the L-axis and direction", vect1)
 
-          print "\n", "   Atom ".ljust(9), "  Xco/A".rjust(9), "  Yco/A".rjust(9), "  Zco/A".rjust(9), " VdW/pm".rjust(9)
-          print "   ##############################################"
+          print("\n", "   Atom ".ljust(9), "  Xco/A".rjust(9), "  Yco/A".rjust(9), "  Zco/A".rjust(9), " VdW/pm".rjust(9))
+          print("   ##############################################")
       # Remove the base atom from the list of atoms to be considered for sterics (after printing all)
-      atomlist = list(xrange(0,natoms))
+      atomlist = list(range(0,natoms))
       if verbose == True:
           for atom in atomlist:
-             if radii == "cpk": print "  ", sterimol_types[atom].ljust(6),
-             if radii == "bondi": print "  ", atomtype[atom].ljust(6),
+             if radii == "cpk": print("  ", sterimol_types[atom].ljust(6), end=' ')
+             if radii == "bondi": print("  ", atomtype[atom].ljust(6), end=' ')
              for coord in molcart[atom]:
-                if coord < 0.0: print "   %.3f".rjust(6) % coord,
-                else: print "    %.3f".rjust(6) % coord,
-             print "    %.1f" % round(vdw_radii[atom]*100)
+                if coord < 0.0: print("   %.3f".rjust(6) % coord, end=' ')
+                else: print("    %.3f".rjust(6) % coord, end=' ')
+             print("    %.1f" % round(vdw_radii[atom]*100))
       atomlist.remove(atomA)
 
       adjlist=[]; opplist=[]; theta=[]
@@ -663,7 +664,7 @@ def calcSandwich(file):
                         if z!=x and z!=y and pvdist>fragrad[z]:satpoint.append(pvdist)
                      if len(satpoint)==len(frag)-2:vlist.append(np.linalg.norm(nvect));alist.append([x,y])#;print x,y
          B1=round(min(vlist),3)
-         print "   "+file.ljust(25),str(tolmanCA).rjust(9), str(smcdist).rjust(9), str(lval).rjust(9),str(B1).rjust(9), str(newB5).rjust(9)
+         print("   "+file.ljust(25),str(tolmanCA).rjust(9), str(smcdist).rjust(9), str(lval).rjust(9),str(B1).rjust(9), str(newB5).rjust(9))
 
 molmod=[['Bq', 0, 0, 0, 0],
         ['H', 1, 1, 1, 1],

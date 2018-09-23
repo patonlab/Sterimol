@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import print_function, absolute_import
 
 # THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -20,9 +21,9 @@
 ###############################################################
 
 
-from sterimoltools import *
+from .sterimoltools import *
 
-if __name__ == "__main__":
+def main():
    files = []
    jobtype=2
    radii = "cpk"; atom1 = 1; atom2 = 2
@@ -35,18 +36,22 @@ if __name__ == "__main__":
             if len(sys.argv[i].split(".")) > 1:
                if sys.argv[i].split(".")[1] == "out" or sys.argv[i].split(".")[1] == "log" or sys.argv[i].split(".")[1] == "com" or sys.argv[i].split(".")[1] == "gjf":
                   files.append(sys.argv[i])
-   else: print "\nWrong number of arguments used. Correct format: sterimol.py (-radii cpk/bondi) (-a1 atomid) (-a2 atomid) file(s)\n"; sys.exit()
+   else: print("\nWrong number of arguments used. Correct format: sterimol.py (-radii cpk/bondi) (-a1 atomid) (-a2 atomid) file(s)\n"); sys.exit()
    if jobtype==1:
       for file in files:
          file_Params = calcSterimol(file, radii, atom1, atom2, True)
          lval = file_Params.lval; B1 = file_Params.B1; B5 = file_Params.newB5
-         print "\n   STERIMOL: using", radii, "van der Waals parameters"
-         print "\n","   Structure".ljust(25),"L".rjust(9),"B1".rjust(9),"B5".rjust(9)
-         print "   "+file.ljust(22), "  %.2f".rjust(9) % lval, "  %.2f".rjust(9) % B1, "  %.2f".rjust(9) % B5
-         print ""
+         print("\n   STERIMOL: using", radii, "van der Waals parameters")
+         print("\n","   Structure".ljust(25),"L".rjust(9),"B1".rjust(9),"B5".rjust(9))
+         print("   "+file.ljust(22), "  %.2f".rjust(9) % lval, "  %.2f".rjust(9) % B1, "  %.2f".rjust(9) % B5)
+         print("")
    if jobtype==2:
-      print "\n   Sandwich Analysis\n   STERIMOL: using original CPK Van der Waals parameters\n"
-      print "   "+"Structure".ljust(25), "Tolman_CA".rjust(9),"MC_dist".rjust(9),"L".rjust(9),"B1".rjust(9),"B5".rjust(9)
+      print("\n   Sandwich Analysis\n   STERIMOL: using original CPK Van der Waals parameters\n")
+      print("   "+"Structure".ljust(25), "Tolman_CA".rjust(9),"MC_dist".rjust(9),"L".rjust(9),"B1".rjust(9),"B5".rjust(9))
       for file in files:
          calcSandwich(file)
-      print "\n"
+      print("\n")
+
+if __name__ == "__main__":
+    main()
+
