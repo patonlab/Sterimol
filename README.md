@@ -9,6 +9,7 @@ A commandline Python program for the calculation of multi-dimensional [Sterimol]
 
 This code is no longer actively supported. We recommend using [wSterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
+*Conformational Effects on Physical-Organic Descriptors – the Case of Sterimol Steric Parameters* Brethomé, A. V.; Fletcher, S. P.; Paton, R. S. *ACS Catalysis* **2019** [**DOI:** 10.1021/acscatal.8b04043](http://dx.doi.org/10.1021/acscatal.8b04043)
 
 #### Installation
 Sterimol runs as a Python module. There are two ways to make this work below. In both cases, you won't need to copy the scripts to your working directory. 
@@ -107,10 +108,11 @@ In this example two sets of parameters are produced - this occurs when the dimer
 * It is possible to run on any number of files at once, for example using wildcards to specify all of the Gaussian files in a directory (*.out)
 * The python file doesn’t need to be in the same folder as the Gaussian files. Just set the location of sterimol.py in the `$PATH` variable.
 
-#### Papers citing Sterimol.py
+#### Papers using Sterimol.py
 1. *Correlating Reactivity and Selectivity to Cyclopentadienyl Ligand Properties in Rh(III)-Catalyzed C-H Activation Reactions: an Experimental and Computational Study* Piou, T.; Romanov-Michailidis, F.; Romanova-Michaelides, T.; Jackson, K. E.; Semakul, N.; Taggart, T. D.; Newell, B S.; Rithner, C. D.; Paton, R. S.; Rovis, T. *J. Am. Chem. Soc.* **2017** *139*, 1296–1310 [DOI: 10.1021/jacs.6b11670](http://dx.doi.org/10.1021/jacs.6b11670)
 2. *Improved correlation between animal and human potency of non-steroidal anti-inflammatory drugs using quantitative structure–activity relationships (QSARs).* Dearden, J.;  Hewitt, M. M.; Bresnen, G. N.; Gregg, C. SAR and QSAR in Environmental Research. **2017**, *28* 1-9 [DOI: 10.1080/1062936X.2017.1351391](http://dx.doi.org/10.1080/1062936X.2017.1351391)
 3. *Enantiodivergent Pd-catalyzed C–C bond formation enabled through ligand parameterization* Zhao, S.; Gensch, T.; Murray, B.; Niemeyer, Z. L.; Sigman, M. S.; Biscoe, M. R. *Science* **2018**, *eaat2299* [DOI: 10.1126/science.aat2299](http://dx.doi.org/10.1126/science.aat2299)
+4. *Conformational Effects on Physical-Organic Descriptors – the Case of Sterimol Steric Parameters* Brethomé, A. V.; Fletcher, S. P.; Paton, R. S. *ACS Catalysis* **2019** [**DOI:** 10.1021/acscatal.8b04043](http://dx.doi.org/10.1021/acscatal.8b04043)
 
 #### References for the underlying theory
 1. Verloop, A. Drug Design Vol. III, Academic P.; Ariens, E. J., Ed.; 1976.
