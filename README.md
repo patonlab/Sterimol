@@ -5,16 +5,16 @@
 
 ![sterimol](sterimol.jpg)
 
-A commandline Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016. Developed by Dr Kelvin Jackson (University of Oxford) and [Robert Paton](http://wwww.patonlab.com) at Colorado State University.
+A command line Python program for the calculation of multi-dimensional [Sterimol](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) parameters: L, B1 and B5 for half-sandwich complexes and organic molecules. If used on half-sandwich complexes, it also generates [Tolman cone angles](https://en.wikipedia.org/wiki/Ligand_cone_angle) and metal to ring-centroid (unweighted) distances. The results have been validated against the original Fortran77 code compiled with gfortran on OSX v10.11.3 27/03/2016. Code developed in the [Paton group](http://wwww.patonlab.com) at Colorado State University.
 
 This code is no longer actively supported. We recommend using [wSterimol](https://github.com/bobbypaton/wSterimol/) which provides expanded functionality for flexible substituents and a graphical interface through [PyMol](https://pymol.org/2).
 
 *Conformational Effects on Physical-Organic Descriptors – the Case of Sterimol Steric Parameters* Brethomé, A. V.; Fletcher, S. P.; Paton, R. S. *ACS Catalysis* **2019**, *9*, 2313-2323 [**DOI:** 10.1021/acscatal.8b04043](http://dx.doi.org/10.1021/acscatal.8b04043)
 
 #### Installation
-Sterimol runs as a Python module. There are two ways to make this work below. In both cases, you won't need to copy the scripts to your working directory. 
-1. The easy way: `pip install sterimol` 
-2. Download the package from [https://github.com/bobbypaton/Sterimol](https://github.com/bobbypaton/Sterimol). Set the environment variable PYTHONPATH to point to the location of the 'Sterimol' folder. For example in OSX, this is done by adding the following (example) line to .bash_profile: `export PYTHONPATH=$PYTHONPATH:/Users/username/Documents/Sterimol` 
+Sterimol runs as a Python module. There are two ways to make this work below. In both cases, you won't need to copy the scripts to your working directory.
+1. The easy way: `pip install sterimol`
+2. Download the package from [https://github.com/bobbypaton/Sterimol](https://github.com/bobbypaton/Sterimol). Set the environment variable PYTHONPATH to point to the location of the 'Sterimol' folder. For example in OSX, this is done by adding the following (example) line to .bash_profile: `export PYTHONPATH=$PYTHONPATH:/Users/username/Documents/Sterimol`
 3.	Now run the script with Gaussian input or output files as `python -m sterimol file(s)`
 
 N.B. If you do want to run the scripts directly (i.e. not as a module) you may need to delete a single period on line 24 of sterimol.py (i.e. `from sterimoltools import * `)
