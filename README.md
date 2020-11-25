@@ -116,6 +116,3 @@ In this example two sets of parameters are produced - this occurs when the dimer
 
 #### References for the underlying theory
 1. Verloop, A. Drug Design Vol. III, Academic P.; Ariens, E. J., Ed.; 1976.
-
----
-License: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
