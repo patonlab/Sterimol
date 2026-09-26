@@ -1,3 +1,19 @@
+> **Archived.** This code has been superseded by [DBSTEP](https://github.com/patonlab/DBSTEP)
+> (`pip install dbstep`), which reproduces everything here and is actively maintained.
+>
+> | sterimol.py | DBSTEP equivalent |
+> |---|---|
+> | `python -m sterimol -a1 2 -a2 1 -radii cpk tBu.com` | `dbstep tBu.com --sterimol --atom1 2 --atom2 1 --radii cpk` |
+> | `python -m sterimol -radii bondi file.log` | `dbstep file.log --sterimol --atom1 A --atom2 B` (Bondi is the default) |
+> | `python -m sterimol RhCpMe5Cl2PMe3.log` (half-sandwich: Tolman cone angle, M–centroid distance, L, B1, B5) | `dbstep RhCpMe5Cl2PMe3.log --cone --radii cpk` (metal and ring auto-detected; `--atom1`/`--atom2` to choose, e.g. `--atom2 17` for the PMe3 ligand) |
+>
+> `--radii cpk` uses the same CPK radii and coordination-number atom typing as this code and matches
+> the original Fortran benchmark to 0.01 Å. Note that DBSTEP reports L without the 0.40 Å hydrogen
+> correction added here (add 0.40 to compare with older tables) and measures the L of a half-sandwich
+> ligand from the metal rather than as the ligand's extent along the axis. DBSTEP also adds buried
+> volumes, grid-based Sterimol, proteins, trajectories, Boltzmann weighting and a PyMOL plugin.
+
+
 # Sterimol.py
 
 [![PyPI version](https://badge.fury.io/py/sterimol.svg)](https://badge.fury.io/py/sterimol)
